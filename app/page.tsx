@@ -211,9 +211,6 @@ export default function Home() {
           <a href="https://keedastudios.com" className="text-emerald-400 hover:underline">
             keedastudios.com →
           </a>
-          <span className="text-muted">
-            Akhil Madan · built for the Zendo Product Engineer role · not affiliated with Zendo
-          </span>
         </div>
       </section>
     </main>
