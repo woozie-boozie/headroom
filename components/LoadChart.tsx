@@ -30,24 +30,24 @@ export function LoadChart({
         <AreaChart data={data} margin={{ top: 16, right: 8, bottom: 0, left: -12 }}>
           <defs>
             <linearGradient id="load" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#38bdf8" stopOpacity={0.45} />
-              <stop offset="100%" stopColor="#38bdf8" stopOpacity={0.02} />
+              <stop offset="0%" stopColor="#0ea5e9" stopOpacity={0.45} />
+              <stop offset="100%" stopColor="#0ea5e9" stopOpacity={0.02} />
             </linearGradient>
           </defs>
-          <CartesianGrid stroke="#16202f" vertical={false} />
+          <CartesianGrid stroke="#e5e9f0" vertical={false} />
           <XAxis
             dataKey="i"
             ticks={dayTicks}
             tickFormatter={(i: number) => dayLabel(facility.timestamps[i], anchor)}
-            stroke="#7d8ba0"
+            stroke="#64748b"
             fontSize={11}
             tickLine={false}
-            axisLine={{ stroke: "#1e2a3c" }}
+            axisLine={{ stroke: "#cbd5e1" }}
           />
           <YAxis
             domain={[0, 10]}
             ticks={[0, 2, 4, 6, 8, 10]}
-            stroke="#7d8ba0"
+            stroke="#64748b"
             fontSize={11}
             tickLine={false}
             axisLine={false}
@@ -56,32 +56,32 @@ export function LoadChart({
           />
           <Tooltip
             contentStyle={{
-              background: "#0d1420",
-              border: "1px solid #1e2a3c",
+              background: "#ffffff",
+              border: "1px solid #cbd5e1",
               borderRadius: 8,
               fontSize: 12,
             }}
             labelFormatter={(i) => dayLabel(facility.timestamps[i as number], anchor)}
             formatter={(v) => [`${Number(v).toFixed(2)} MW`, "Facility load"]}
           />
-          <Area type="monotone" dataKey="mw" stroke="#38bdf8" strokeWidth={2} fill="url(#load)" isAnimationActive={false} />
+          <Area type="monotone" dataKey="mw" stroke="#0ea5e9" strokeWidth={2} fill="url(#load)" isAnimationActive={false} />
           <ReferenceLine
             y={analysis.installedMw}
-            stroke="#f87171"
+            stroke="#dc2626"
             strokeDasharray="5 4"
-            label={{ value: "Grid cap 10 MW", position: "insideTopRight", fill: "#f87171", fontSize: 10 }}
+            label={{ value: "Grid cap 10 MW", position: "insideTopRight", fill: "#dc2626", fontSize: 10 }}
           />
           <ReferenceLine
             y={analysis.usableMw}
-            stroke="#fbbf24"
+            stroke="#d97706"
             strokeDasharray="5 4"
-            label={{ value: `Usable after N+1 ${analysis.usableMw} MW`, position: "insideTopRight", fill: "#fbbf24", fontSize: 10 }}
+            label={{ value: `Usable after N+1 ${analysis.usableMw} MW`, position: "insideTopRight", fill: "#d97706", fontSize: 10 }}
           />
           <ReferenceLine
             y={analysis.planningCeilingMw}
-            stroke="#34d399"
+            stroke="#059669"
             strokeDasharray="2 5"
-            label={{ value: `Plan ceiling ${analysis.planningCeilingMw.toFixed(1)} MW`, position: "insideBottomRight", fill: "#34d399", fontSize: 10 }}
+            label={{ value: `Plan ceiling ${analysis.planningCeilingMw.toFixed(1)} MW`, position: "insideBottomRight", fill: "#059669", fontSize: 10 }}
           />
         </AreaChart>
       </ResponsiveContainer>

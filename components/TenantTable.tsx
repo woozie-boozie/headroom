@@ -1,10 +1,10 @@
 import { FacilitySnapshot, RACK_CLASS_LABEL, RackClass } from "@/lib/facility";
 
 const CLASS_STYLE: Record<RackClass, string> = {
-  "ai-training": "bg-emerald-500/15 text-emerald-300",
-  "ai-inference": "bg-sky-500/15 text-sky-300",
-  enterprise: "bg-violet-500/15 text-violet-300",
-  legacy: "bg-slate-500/15 text-slate-300",
+  "ai-training": "bg-emerald-500/15 text-emerald-700",
+  "ai-inference": "bg-sky-500/15 text-sky-700",
+  enterprise: "bg-violet-500/15 text-violet-700",
+  legacy: "bg-slate-500/15 text-slate-700",
 };
 
 export function TenantTable({ facility }: { facility: FacilitySnapshot }) {
@@ -31,17 +31,17 @@ export function TenantTable({ facility }: { facility: FacilitySnapshot }) {
             const util = (now / t.contractedItKw) * 100;
             return (
               <tr key={t.id} className="border-b border-border/50">
-                <td className="py-2 pr-2 text-slate-200">{t.name}</td>
+                <td className="py-2 pr-2 text-slate-800">{t.name}</td>
                 <td className="py-2 pr-2">
                   <span className={`rounded px-1.5 py-0.5 text-[11px] ${CLASS_STYLE[t.rackClass]}`}>
                     {RACK_CLASS_LABEL[t.rackClass]}
                   </span>
                 </td>
-                <td className="tabular py-2 pl-6 text-right text-slate-300">{t.racks}</td>
-                <td className="tabular py-2 pl-6 text-right text-slate-300">
+                <td className="tabular py-2 pl-6 text-right text-slate-700">{t.racks}</td>
+                <td className="tabular py-2 pl-6 text-right text-slate-700">
                   {t.contractedItKw.toLocaleString()} kW
                 </td>
-                <td className="tabular py-2 pl-6 text-right text-slate-400">
+                <td className="tabular py-2 pl-6 text-right text-slate-600">
                   {Math.round(now).toLocaleString()} kW
                 </td>
                 <td className="py-2 pl-6">
@@ -60,7 +60,7 @@ export function TenantTable({ facility }: { facility: FacilitySnapshot }) {
               </tr>
             );
           })}
-          <tr className="text-[13px] font-medium text-slate-200">
+          <tr className="text-[13px] font-medium text-slate-800">
             <td className="pt-2" colSpan={3}>
               {rows.length} tenants ·{" "}
               {rows.reduce((s, t) => s + t.racks, 0)} racks

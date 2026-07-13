@@ -6,9 +6,9 @@ import type { GridConditions } from "@/lib/grid";
 import { whenLabel } from "@/lib/format";
 
 function indexColor(index: string): string {
-  if (index.includes("very low") || index === "low") return "text-emerald-400";
-  if (index === "moderate") return "text-amber-400";
-  return "text-rose-400";
+  if (index.includes("very low") || index === "low") return "text-emerald-600";
+  if (index === "moderate") return "text-amber-600";
+  return "text-rose-600";
 }
 
 export function GridPanel() {
@@ -54,7 +54,7 @@ export function GridPanel() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
-          <h2 className="text-sm font-medium text-slate-200">Live UK grid intelligence</h2>
+          <h2 className="text-sm font-medium text-slate-800">Live UK grid intelligence</h2>
         </div>
         <span className="text-[11px] text-muted">
           {g.live ? "NESO · Octopus Agile" : "cached"} · GB
@@ -69,14 +69,14 @@ export function GridPanel() {
         </div>
         <div className="rounded-lg border border-border bg-panel-2 px-3 py-2">
           <div className="text-[11px] uppercase tracking-wider text-muted">Renewables</div>
-          <div className="tabular text-2xl font-semibold text-emerald-400">
+          <div className="tabular text-2xl font-semibold text-emerald-600">
             {c.renewablePct.toFixed(0)}%
           </div>
           <div className="text-[11px] text-muted">wind {c.windPct.toFixed(0)}% now</div>
         </div>
         <div className="rounded-lg border border-border bg-panel-2 px-3 py-2">
           <div className="text-[11px] uppercase tracking-wider text-muted">Import price</div>
-          <div className="tabular text-2xl font-semibold text-sky-400">
+          <div className="tabular text-2xl font-semibold text-sky-600">
             {c.pricePPerKwh != null ? c.pricePPerKwh.toFixed(1) : "—"}
           </div>
           <div className="text-[11px] text-muted">p/kWh · Agile</div>
@@ -89,15 +89,15 @@ export function GridPanel() {
           <AreaChart data={spark} margin={{ top: 4, right: 0, bottom: 0, left: 0 }}>
             <defs>
               <linearGradient id="carbon" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#34d399" stopOpacity={0.5} />
-                <stop offset="100%" stopColor="#34d399" stopOpacity={0.03} />
+                <stop offset="0%" stopColor="#059669" stopOpacity={0.5} />
+                <stop offset="100%" stopColor="#059669" stopOpacity={0.03} />
               </linearGradient>
             </defs>
             <YAxis hide domain={["dataMin - 10", "dataMax + 10"]} />
             <Area
               type="monotone"
               dataKey="carbon"
-              stroke="#34d399"
+              stroke="#059669"
               strokeWidth={1.5}
               fill="url(#carbon)"
               isAnimationActive={false}
@@ -112,22 +112,22 @@ export function GridPanel() {
         {g.greenestWindow && (
           <div>
             <div className="text-[11px] uppercase tracking-wider text-muted">Greenest window (24h)</div>
-            <div className="text-sm text-slate-200">
+            <div className="text-sm text-slate-800">
               {whenLabel(g.greenestWindow.from)} ·{" "}
-              <span className="tabular text-emerald-400">{g.greenestWindow.carbon} gCO₂/kWh</span>{" "}
-              {greenDelta > 0 && <span className="text-emerald-400">(−{greenDelta}%)</span>}
+              <span className="tabular text-emerald-600">{g.greenestWindow.carbon} gCO₂/kWh</span>{" "}
+              {greenDelta > 0 && <span className="text-emerald-600">(−{greenDelta}%)</span>}
             </div>
           </div>
         )}
         {g.cheapestWindow && (
           <div>
             <div className="text-[11px] uppercase tracking-wider text-muted">Cheapest window</div>
-            <div className="text-sm text-slate-200">
+            <div className="text-sm text-slate-800">
               {whenLabel(g.cheapestWindow.from)} ·{" "}
-              <span className="tabular text-sky-400">
+              <span className="tabular text-sky-600">
                 {g.cheapestWindow.pricePPerKwh.toFixed(1)} p/kWh
               </span>{" "}
-              {cheapDelta > 0 && <span className="text-sky-400">(−{cheapDelta}%)</span>}
+              {cheapDelta > 0 && <span className="text-sky-600">(−{cheapDelta}%)</span>}
             </div>
           </div>
         )}

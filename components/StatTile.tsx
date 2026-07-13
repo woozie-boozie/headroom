@@ -3,11 +3,11 @@ import { ReactNode } from "react";
 type Accent = "emerald" | "sky" | "amber" | "rose" | "slate";
 
 const ACCENT: Record<Accent, string> = {
-  emerald: "text-emerald-400",
-  sky: "text-sky-400",
-  amber: "text-amber-400",
-  rose: "text-rose-400",
-  slate: "text-slate-200",
+  emerald: "text-emerald-600",
+  sky: "text-sky-600",
+  amber: "text-amber-600",
+  rose: "text-rose-600",
+  slate: "text-slate-800",
 };
 
 export function StatTile({

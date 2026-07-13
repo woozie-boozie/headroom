@@ -52,8 +52,8 @@ export function Copilot() {
   return (
     <div className="rounded-xl border border-border bg-panel p-5">
       <div className="mb-1 flex items-center gap-2">
-        <span className="text-emerald-400">✦</span>
-        <h2 className="text-sm font-medium text-slate-200">Energy Copilot</h2>
+        <span className="text-emerald-600">✦</span>
+        <h2 className="text-sm font-medium text-slate-800">Energy Copilot</h2>
         <span className="text-[11px] text-muted">reasons over live headroom + grid — defers risky calls to you</span>
       </div>
 
@@ -70,20 +70,20 @@ export function Copilot() {
             <div
               className={`inline-block max-w-[85%] rounded-lg px-3 py-2 text-sm ${
                 m.role === "user"
-                  ? "bg-sky-500/15 text-slate-100"
-                  : "bg-panel-2 text-slate-200"
+                  ? "bg-sky-500/15 text-slate-900"
+                  : "bg-panel-2 text-slate-800"
               }`}
             >
               <div className="whitespace-pre-wrap">{m.content}</div>
               {m.trace && m.trace.length > 0 && (
                 <details className="mt-2 text-[11px] text-muted">
-                  <summary className="cursor-pointer select-none hover:text-slate-300">
+                  <summary className="cursor-pointer select-none hover:text-slate-700">
                     {m.trace.length} tool call{m.trace.length > 1 ? "s" : ""}
                   </summary>
                   <div className="mt-1 space-y-1">
                     {m.trace.map((s, j) => (
                       <div key={j} className="tabular rounded border border-border bg-panel px-2 py-1">
-                        <span className="text-emerald-400">{s.tool}</span>
+                        <span className="text-emerald-600">{s.tool}</span>
                         {Object.keys(s.input).length > 0 && (
                           <span className="text-muted"> ({JSON.stringify(s.input)})</span>
                         )}
@@ -104,7 +104,7 @@ export function Copilot() {
             <button
               key={s}
               onClick={() => send(s)}
-              className="rounded-full border border-border bg-panel-2 px-3 py-1 text-xs text-slate-300 hover:border-emerald-500/40 hover:text-slate-100"
+              className="rounded-full border border-border bg-panel-2 px-3 py-1 text-xs text-slate-700 hover:border-emerald-500/40 hover:text-slate-900"
             >
               {s}
             </button>
@@ -123,7 +123,7 @@ export function Copilot() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask the operator copilot…"
-          className="flex-1 rounded-lg border border-border bg-panel-2 px-3 py-2 text-sm text-slate-100 outline-none placeholder:text-muted focus:border-emerald-500/40"
+          className="flex-1 rounded-lg border border-border bg-panel-2 px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-muted focus:border-emerald-500/40"
         />
         <button
           type="submit"

@@ -18,22 +18,22 @@ export default function Home() {
 
   const breachTone =
     analysis.breachProbabilityPct < 2
-      ? "text-emerald-400"
+      ? "text-emerald-600"
       : analysis.breachProbabilityPct < 8
-        ? "text-amber-400"
-        : "text-rose-400";
+        ? "text-amber-600"
+        : "text-rose-600";
 
   return (
     <main className="mx-auto w-full max-w-6xl px-5 pb-20">
       {/* nav */}
       <header className="flex items-center justify-between border-b border-border py-4">
         <div className="flex items-baseline gap-2">
-          <span className="text-lg font-semibold tracking-tight text-emerald-400">◢ Headroom</span>
+          <span className="text-lg font-semibold tracking-tight text-emerald-600">◢ Headroom</span>
           <span className="text-xs text-muted">Energy OS · prototype</span>
         </div>
         <a
           href="#about"
-          className="rounded-full border border-border bg-panel px-3 py-1 text-xs text-slate-300 hover:border-emerald-500/40"
+          className="rounded-full border border-border bg-panel px-3 py-1 text-xs text-slate-700 hover:border-emerald-500/40"
         >
           Built for Zendo →
         </a>
@@ -41,21 +41,21 @@ export default function Home() {
 
       {/* hero */}
       <section className="pt-10">
-        <p className="text-xs uppercase tracking-[0.2em] text-emerald-400/80">
+        <p className="text-xs uppercase tracking-[0.2em] text-emerald-600/80">
           Reclaiming stranded data-center capacity
         </p>
-        <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight text-slate-100 sm:text-4xl">
+        <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
           {facility.config.name} is selling{" "}
-          <span className="tabular text-slate-300">{fmtMw(analysis.contractedFacilityMw)}</span> of a
+          <span className="tabular text-slate-700">{fmtMw(analysis.contractedFacilityMw)}</span> of a
           10 MW connection — but only draws{" "}
-          <span className="tabular text-sky-300">{fmtMw(analysis.coincidentPeakMw)}</span> at peak.
+          <span className="tabular text-sky-700">{fmtMw(analysis.coincidentPeakMw)}</span> at peak.
         </h1>
-        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-400">
+        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-600">
           Operators provision for every tenant&apos;s contracted nameplate. Real coincident demand is
           far lower. That gap — minus an N+1 reserve and a risk buffer — is{" "}
-          <span className="font-medium text-emerald-400">sellable capacity</span> you can let to new
+          <span className="font-medium text-emerald-600">sellable capacity</span> you can let to new
           AI tenants{" "}
-          <span className="text-slate-200">without waiting years for a new grid connection.</span>
+          <span className="text-slate-800">without waiting years for a new grid connection.</span>
         </p>
       </section>
 
@@ -87,19 +87,19 @@ export default function Home() {
       <section className="mt-4 rounded-xl border border-border bg-panel p-5">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
-            <h2 className="text-sm font-medium text-slate-200">Oversubscription risk appetite</h2>
+            <h2 className="text-sm font-medium text-slate-800">Oversubscription risk appetite</h2>
             <p className="text-xs text-muted">
               How much of the headroom you&apos;re willing to sell before real load could exceed the
               plan.
             </p>
           </div>
           <div className="tabular text-right text-xs text-muted">
-            plan ceiling <span className="text-slate-200">{fmtMw(analysis.planningCeilingMw)}</span> ·
+            plan ceiling <span className="text-slate-800">{fmtMw(analysis.planningCeilingMw)}</span> ·
             breach risk <span className={breachTone}>{fmtPct(analysis.breachProbabilityPct, 1)}</span>
           </div>
         </div>
         <div className="mt-4 flex items-center gap-4">
-          <span className="w-24 text-right text-xs text-emerald-400">Conservative</span>
+          <span className="w-24 text-right text-xs text-emerald-600">Conservative</span>
           <input
             type="range"
             min={0}
@@ -109,14 +109,14 @@ export default function Home() {
             className="flex-1"
             aria-label="Oversubscription risk appetite"
           />
-          <span className="w-24 text-xs text-rose-400">Aggressive</span>
+          <span className="w-24 text-xs text-rose-600">Aggressive</span>
         </div>
         <div className="mt-4 flex flex-wrap items-baseline gap-2 border-t border-border pt-3">
-          <span className="tabular text-2xl font-semibold text-emerald-400">
+          <span className="tabular text-2xl font-semibold text-emerald-600">
             {fmtMw(analysis.reclaimableMw)}
           </span>
-          <span className="text-sm text-slate-400">
-            reclaimable ≈ <span className="text-slate-200">{analysis.reclaimableAiRacks} AI racks</span>{" "}
+          <span className="text-sm text-slate-600">
+            reclaimable ≈ <span className="text-slate-800">{analysis.reclaimableAiRacks} AI racks</span>{" "}
             · <span className={breachTone}>{fmtPct(analysis.breachProbabilityPct, 1)}</span> chance
             real load exceeds the plan
           </span>
@@ -126,19 +126,19 @@ export default function Home() {
       {/* load chart */}
       <section className="mt-4 rounded-xl border border-border bg-panel p-5">
         <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-sm font-medium text-slate-200">Facility load · past 7 days</h2>
+          <h2 className="text-sm font-medium text-slate-800">Facility load · past 7 days</h2>
           <div className="flex gap-4 text-[11px] text-muted">
             <span className="flex items-center gap-1">
-              <i className="inline-block h-2 w-2 rounded-full bg-sky-400" />load
+              <i className="inline-block h-2 w-2 rounded-full bg-sky-500" />load
             </span>
             <span className="flex items-center gap-1">
-              <i className="inline-block h-0.5 w-3 bg-rose-400" />grid cap
+              <i className="inline-block h-0.5 w-3 bg-rose-600" />grid cap
             </span>
             <span className="flex items-center gap-1">
-              <i className="inline-block h-0.5 w-3 bg-amber-400" />usable
+              <i className="inline-block h-0.5 w-3 bg-amber-600" />usable
             </span>
             <span className="flex items-center gap-1">
-              <i className="inline-block h-0.5 w-3 bg-emerald-400" />plan ceiling
+              <i className="inline-block h-0.5 w-3 bg-emerald-600" />plan ceiling
             </span>
           </div>
         </div>
@@ -163,11 +163,11 @@ export default function Home() {
       {/* power stack + tenants */}
       <section className="mt-4 grid gap-4 lg:grid-cols-2">
         <div className="rounded-xl border border-border bg-panel p-5">
-          <h2 className="mb-4 text-sm font-medium text-slate-200">Power path · where the watts go</h2>
+          <h2 className="mb-4 text-sm font-medium text-slate-800">Power path · where the watts go</h2>
           <PowerStack facility={facility} analysis={analysis} />
         </div>
         <div className="rounded-xl border border-border bg-panel p-5">
-          <h2 className="mb-3 text-sm font-medium text-slate-200">
+          <h2 className="mb-3 text-sm font-medium text-slate-800">
             Tenants · contracted vs actual draw
           </h2>
           <TenantTable facility={facility} />
@@ -176,11 +176,11 @@ export default function Home() {
 
       {/* about / concept */}
       <section id="about" className="mt-12 border-t border-border pt-8">
-        <p className="text-xs uppercase tracking-[0.2em] text-emerald-400/80">Built to apply to Zendo</p>
-        <h2 className="mt-3 max-w-3xl text-xl font-semibold text-slate-100">
+        <p className="text-xs uppercase tracking-[0.2em] text-emerald-600/80">Built to apply to Zendo</p>
+        <h2 className="mt-3 max-w-3xl text-xl font-semibold text-slate-900">
           A working slice of an Energy OS — not a pitch deck.
         </h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
           Rather than send a CV, I built the thing: the stranded-capacity problem Zendo solves,
           wired to the live UK grid, with an operator copilot that recommends what it can and defers
           anything that would breach the N+1 reserve to a human. Facility telemetry is simulated; the
@@ -190,7 +190,7 @@ export default function Home() {
         <div className="mt-5 grid gap-5 sm:grid-cols-2">
           <div>
             <div className="text-xs uppercase tracking-wider text-muted">What&apos;s here</div>
-            <ul className="mt-2 space-y-1 text-sm text-slate-300">
+            <ul className="mt-2 space-y-1 text-sm text-slate-700">
               <li>· Reclaim stranded capacity with a risk-tuned oversubscription model</li>
               <li>· Live grid intelligence → greenest / cheapest windows for flexible load</li>
               <li>· An operator copilot that reasons over live headroom + grid and defers risky calls</li>
@@ -199,7 +199,7 @@ export default function Home() {
           </div>
           <div>
             <div className="text-xs uppercase tracking-wider text-muted">What I&apos;d build in month one</div>
-            <ul className="mt-2 space-y-1 text-sm text-slate-300">
+            <ul className="mt-2 space-y-1 text-sm text-slate-700">
               <li>· Swap simulated telemetry for real BMS / PDU feeds behind the same interfaces</li>
               <li>· Per-tenant, SLA-aware oversubscription policy instead of one global dial</li>
               <li>· Make copilot proposals executable through an approvals flow — every irreversible action gated</li>
@@ -208,7 +208,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
-          <a href="https://keedastudios.com" className="text-emerald-400 hover:underline">
+          <a href="https://keedastudios.com" className="text-emerald-600 hover:underline">
             keedastudios.com →
           </a>
         </div>

@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import type { CapacityRequest, Headroom } from "@/lib/orchestration";
 
 const VERDICT_STYLE: Record<string, string> = {
-  granted: "bg-emerald-500/15 text-emerald-300",
-  partial: "bg-amber-500/15 text-amber-300",
-  denied: "bg-rose-500/15 text-rose-300",
+  granted: "bg-emerald-500/15 text-emerald-700",
+  partial: "bg-amber-500/15 text-amber-700",
+  denied: "bg-rose-500/15 text-rose-700",
 };
 
 const QUICK = [
@@ -63,12 +63,12 @@ export function Orchestration() {
   return (
     <div className="rounded-xl border border-border bg-panel p-5">
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-sm font-medium text-slate-200">Operator ↔ tenant orchestration</h2>
+        <h2 className="text-sm font-medium text-slate-800">Operator ↔ tenant orchestration</h2>
         <a
           href="/api/openapi"
           target="_blank"
           rel="noreferrer"
-          className="rounded border border-border bg-panel-2 px-2 py-0.5 text-[11px] text-slate-300 hover:border-emerald-500/40"
+          className="rounded border border-border bg-panel-2 px-2 py-0.5 text-[11px] text-slate-700 hover:border-emerald-500/40"
         >
           API spec ↗
         </a>
@@ -80,8 +80,8 @@ export function Orchestration() {
           <div className="mb-1 flex justify-between text-xs text-muted">
             <span>Reclaimable headroom allocation</span>
             <span className="tabular">
-              <span className="text-emerald-400">{headroom.availableMw.toFixed(2)} MW</span> available ·{" "}
-              <span className="text-amber-400">{headroom.committedMw.toFixed(2)} MW</span> committed
+              <span className="text-emerald-600">{headroom.availableMw.toFixed(2)} MW</span> available ·{" "}
+              <span className="text-amber-600">{headroom.committedMw.toFixed(2)} MW</span> committed
             </span>
           </div>
           <div className="flex h-3 overflow-hidden rounded-full bg-panel-2">
@@ -104,7 +104,7 @@ export function Orchestration() {
           <input
             value={tenant}
             onChange={(e) => setTenant(e.target.value)}
-            className="mt-1 block w-32 rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-100 outline-none focus:border-emerald-500/40"
+            className="mt-1 block w-32 rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500/40"
           />
         </label>
         <label className="text-xs text-muted">
@@ -115,7 +115,7 @@ export function Orchestration() {
             min="0"
             value={mw}
             onChange={(e) => setMw(e.target.value)}
-            className="tabular mt-1 block w-20 rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-100 outline-none focus:border-emerald-500/40"
+            className="tabular mt-1 block w-20 rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500/40"
           />
         </label>
         <label className="text-xs text-muted">
@@ -126,7 +126,7 @@ export function Orchestration() {
             min="0"
             value={hours}
             onChange={(e) => setHours(e.target.value)}
-            className="tabular mt-1 block w-20 rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-100 outline-none focus:border-emerald-500/40"
+            className="tabular mt-1 block w-20 rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500/40"
           />
         </label>
         <label className="text-xs text-muted">
@@ -134,7 +134,7 @@ export function Orchestration() {
           <select
             value={priority}
             onChange={(e) => setPriority(e.target.value as "standard" | "high")}
-            className="mt-1 block rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-100 outline-none focus:border-emerald-500/40"
+            className="mt-1 block rounded border border-border bg-panel-2 px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500/40"
           >
             <option value="standard">standard</option>
             <option value="high">high</option>
@@ -155,13 +155,13 @@ export function Orchestration() {
           <button
             key={q.tenant}
             onClick={() => submit(q.tenant, q.mw, q.hours)}
-            className="rounded-full border border-border bg-panel-2 px-2 py-0.5 text-slate-300 hover:border-emerald-500/40"
+            className="rounded-full border border-border bg-panel-2 px-2 py-0.5 text-slate-700 hover:border-emerald-500/40"
           >
             {q.tenant} +{q.mw} MW
           </button>
         ))}
         {requests.length > 0 && (
-          <button onClick={reset} className="ml-auto text-muted hover:text-slate-300">
+          <button onClick={reset} className="ml-auto text-muted hover:text-slate-700">
             reset
           </button>
         )}
@@ -176,7 +176,7 @@ export function Orchestration() {
                 {r.verdict}
               </span>
               <div className="min-w-0">
-                <span className="text-slate-200">{r.tenant}</span>{" "}
+                <span className="text-slate-800">{r.tenant}</span>{" "}
                 <span className="tabular text-muted">
                   {r.requestedMw} MW / {r.hours}h
                   {r.verdict === "partial" && ` → ${r.grantedMw} MW`}
