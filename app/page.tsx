@@ -181,7 +181,7 @@ export default function Home() {
           A working slice of an Energy OS — not a pitch deck.
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Rather than send a CV, I built the thing: the stranded-capacity problem itself,
+          It tackles the stranded-capacity problem itself,
           wired to the live UK grid, with an operator copilot that recommends what it can and defers
           anything that would breach the N+1 reserve to a human. Facility telemetry is simulated; the
           grid feed — NESO carbon intensity + 48-hour forecast and Octopus Agile pricing — is live,

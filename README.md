@@ -1,8 +1,7 @@
 # Headroom — a working slice of an Energy OS
 
-A prototype built as a Product Engineer job application. Rather than send a CV, I built the concept
-in miniature: **reclaim stranded data-center power**, wired to the **live UK grid**, with an
-**operator copilot** that recommends what it safely can and defers anything risky to a human.
+A prototype in miniature: **reclaim stranded data-center power**, wired to the **live UK grid**, with
+an **operator copilot** that recommends what it safely can and defers anything risky to a human.
 
 > Facility telemetry is simulated (real operator telemetry isn't public). The grid feed is **live**
 > and needs no API keys.
