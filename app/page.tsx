@@ -35,7 +35,7 @@ export default function Home() {
           href="#about"
           className="rounded-full border border-border bg-panel px-3 py-1 text-xs text-slate-700 hover:border-emerald-500/40"
         >
-          Built for Zendo →
+          About →
         </a>
       </header>
 
@@ -176,12 +176,12 @@ export default function Home() {
 
       {/* about / concept */}
       <section id="about" className="mt-12 border-t border-border pt-8">
-        <p className="text-xs uppercase tracking-[0.2em] text-emerald-600/80">Built to apply to Zendo</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-emerald-600/80">The concept</p>
         <h2 className="mt-3 max-w-3xl text-xl font-semibold text-slate-900">
           A working slice of an Energy OS — not a pitch deck.
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Rather than send a CV, I built the thing: the stranded-capacity problem Zendo solves,
+          Rather than send a CV, I built the thing: the stranded-capacity problem itself,
           wired to the live UK grid, with an operator copilot that recommends what it can and defers
           anything that would breach the N+1 reserve to a human. Facility telemetry is simulated; the
           grid feed — NESO carbon intensity + 48-hour forecast and Octopus Agile pricing — is live,

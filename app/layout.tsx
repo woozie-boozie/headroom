@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "Headroom — an Energy OS slice for data centers",
   description:
-    "A working prototype: reclaim stranded data-center power, wired to live UK grid data, with an operator copilot. Built as a Zendo application.",
+    "A working prototype: reclaim stranded data-center power, wired to live UK grid data, with an operator copilot.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
