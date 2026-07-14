@@ -1,7 +1,6 @@
 // Live UK grid intelligence, fetched server-side (no auth on any of these).
 //   - Carbon intensity + 48h forecast + generation mix: NESO Carbon Intensity API
-//   - Dynamic import price: Octopus Agile (London region C) — thematically apt,
-//     Zendo's co-founder is ex-Octopus.
+//   - Dynamic import price: Octopus Agile (London region C).
 // Every fetch degrades gracefully; `live` flags whether real data came back.
 
 const CI = "https://api.carbonintensity.org.uk";

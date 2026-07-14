@@ -1,19 +1,18 @@
 # Headroom — a working slice of an Energy OS
 
-A prototype built to apply to [Zendo](https://zendoenergy.com) for the Product Engineer role.
-Rather than send a CV, I built the thing Zendo does in miniature: **reclaim stranded data-center
-power**, wired to the **live UK grid**, with an **operator copilot** that recommends what it safely
-can and defers anything risky to a human.
+A prototype built as a Product Engineer job application. Rather than send a CV, I built the concept
+in miniature: **reclaim stranded data-center power**, wired to the **live UK grid**, with an
+**operator copilot** that recommends what it safely can and defers anything risky to a human.
 
 > Facility telemetry is simulated (real operator telemetry isn't public). The grid feed is **live**
-> and needs no API keys. Not affiliated with Zendo.
+> and needs no API keys.
 
 ## The problem it demonstrates
 
 An operator has a fixed grid connection (here 10 MW) that takes years to upgrade. They've sold ~9.2
 MW to tenants on paper, but tenants never all peak together, so real coincident draw is only ~6.3
 MW. That gap — minus an N+1 redundancy reserve and a risk buffer — is **sellable capacity** an
-operator can let to new AI tenants without waiting for a new grid connection. That's Zendo's pitch;
+operator can let to new AI tenants without waiting for a new grid connection. That's the opportunity;
 this is a tool that finds and safely allocates it.
 
 ## What's in it
